@@ -573,45 +573,46 @@ html {
 }
 
 /* Mobile Animations */
-@keyframes fadeInUp {
-    from {
+@keyframes mobileScaleIn {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: scale(0.95);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes scaleIn {
-    from {
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to {
+    100% {
         opacity: 1;
         transform: scale(1);
     }
 }
 
-@keyframes slideInFromLeft {
-    from {
+@keyframes mobileSlideUp {
+    0% {
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateY(20px);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 }
 
-/* Update Mobile Responsive Styles */
+@keyframes mobileFadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
     #hero {
         min-height: 100vh;
         padding: 16px;
         background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .hero-content {
@@ -621,16 +622,20 @@ html {
         border-radius: 12px;
         border: none;
         box-shadow: none;
-        animation: scaleIn 0.5s ease-out forwards;
+        opacity: 0;
+        animation: mobileScaleIn 0.8s ease forwards;
+        position: relative;
+        width: calc(100% - 32px);
+        max-width: 100%;
     }
 
     .hero-content h1 {
         font-size: 24px;
         margin-bottom: 8px;
         color: #fff;
-        animation: slideInFromLeft 0.5s ease-out forwards;
-        animation-delay: 0.2s;
         opacity: 0;
+        animation: mobileSlideUp 0.8s ease forwards;
+        animation-delay: 0.3s;
     }
 
     .hero-content h2 {
@@ -638,9 +643,9 @@ html {
         color: #00FFFF;
         margin-bottom: 8px;
         letter-spacing: 0;
-        animation: slideInFromLeft 0.5s ease-out forwards;
-        animation-delay: 0.3s;
         opacity: 0;
+        animation: mobileSlideUp 0.8s ease forwards;
+        animation-delay: 0.5s;
     }
 
     .hero-content p {
@@ -648,9 +653,9 @@ html {
         color: rgba(255, 255, 255, 0.9);
         margin-bottom: 16px;
         padding: 0;
-        animation: fadeInUp 0.5s ease-out forwards;
-        animation-delay: 0.4s;
         opacity: 0;
+        animation: mobileSlideUp 0.8s ease forwards;
+        animation-delay: 0.7s;
     }
 
     .hero-buttons {
@@ -659,9 +664,9 @@ html {
         gap: 8px;
         margin: 0;
         padding: 0;
-        animation: fadeInUp 0.5s ease-out forwards;
-        animation-delay: 0.5s;
         opacity: 0;
+        animation: mobileFadeIn 0.8s ease forwards;
+        animation-delay: 0.9s;
     }
 
     .btn {
@@ -679,37 +684,42 @@ html {
         width: auto;
         margin: 0;
         box-shadow: none !important;
+        transform: none !important;
+        position: relative;
     }
 
-    .btn:hover, .btn:active {
-        background: rgba(0, 0, 0, 0.3) !important;
+    /* Sections Animation */
+    section {
+        padding: 32px 16px;
+        opacity: 0;
+        animation: mobileSlideUp 1s ease forwards;
+    }
+
+    .experience-item, 
+    .project-card, 
+    .education-item, 
+    .contact-item {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: mobileSlideUp 0.8s ease forwards;
+    }
+
+    /* Ensure animations don't break layout */
+    .hero-content *,
+    section *,
+    .btn * {
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
     }
 
     nav {
         display: none;
     }
-
-    section {
-        padding: 32px 16px;
-        opacity: 0;
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-
-    section.visible {
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-
-    .experience-item, .project-card, .education-item, .contact-item {
-        opacity: 0;
-        animation: fadeInUp 0.5s ease-out forwards;
-    }
-
-    * {
-        transition: background-color 0.3s ease !important;
-    }
 }
 
-/* Keep the small device optimizations */
+/* Small Device Optimization */
 @media (max-width: 320px) {
     .hero-content {
         padding: 20px 12px;
@@ -721,10 +731,11 @@ html {
     }
 }
 
-/* Update touch device styles */
+/* Touch Device Styles */
 @media (hover: none) {
     .btn, .btn:hover, .btn:active {
         background: rgba(0, 0, 0, 0.2) !important;
         color: #fff !important;
+        transform: none !important;
     }
 }
