@@ -572,7 +572,41 @@ html {
     font-weight: 500;
 }
 
-/* Mobile Responsive Styles */
+/* Mobile Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Update Mobile Responsive Styles */
 @media (max-width: 768px) {
     #hero {
         min-height: 100vh;
@@ -587,16 +621,16 @@ html {
         border-radius: 12px;
         border: none;
         box-shadow: none;
-    }
-
-    .hero-content::before {
-        display: none;
+        animation: scaleIn 0.5s ease-out forwards;
     }
 
     .hero-content h1 {
         font-size: 24px;
         margin-bottom: 8px;
         color: #fff;
+        animation: slideInFromLeft 0.5s ease-out forwards;
+        animation-delay: 0.2s;
+        opacity: 0;
     }
 
     .hero-content h2 {
@@ -604,6 +638,9 @@ html {
         color: #00FFFF;
         margin-bottom: 8px;
         letter-spacing: 0;
+        animation: slideInFromLeft 0.5s ease-out forwards;
+        animation-delay: 0.3s;
+        opacity: 0;
     }
 
     .hero-content p {
@@ -611,6 +648,9 @@ html {
         color: rgba(255, 255, 255, 0.9);
         margin-bottom: 16px;
         padding: 0;
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.4s;
+        opacity: 0;
     }
 
     .hero-buttons {
@@ -619,6 +659,9 @@ html {
         gap: 8px;
         margin: 0;
         padding: 0;
+        animation: fadeInUp 0.5s ease-out forwards;
+        animation-delay: 0.5s;
+        opacity: 0;
     }
 
     .btn {
@@ -636,13 +679,10 @@ html {
         width: auto;
         margin: 0;
         box-shadow: none !important;
-        transform: none !important;
     }
 
     .btn:hover, .btn:active {
-        transform: none !important;
-        box-shadow: none !important;
-        background: rgba(0, 0, 0, 0.2) !important;
+        background: rgba(0, 0, 0, 0.3) !important;
     }
 
     nav {
@@ -651,16 +691,25 @@ html {
 
     section {
         padding: 32px 16px;
+        opacity: 0;
+        animation: fadeInUp 0.5s ease-out forwards;
     }
 
-    /* Remove all animations and transitions on mobile */
+    section.visible {
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+
+    .experience-item, .project-card, .education-item, .contact-item {
+        opacity: 0;
+        animation: fadeInUp 0.5s ease-out forwards;
+    }
+
     * {
-        animation: none !important;
-        transition: none !important;
+        transition: background-color 0.3s ease !important;
     }
 }
 
-/* Ensure consistent button styles across all mobile devices */
+/* Keep the small device optimizations */
 @media (max-width: 320px) {
     .hero-content {
         padding: 20px 12px;
@@ -672,11 +721,9 @@ html {
     }
 }
 
-/* Force mobile styles for touch devices */
+/* Update touch device styles */
 @media (hover: none) {
     .btn, .btn:hover, .btn:active {
-        transform: none !important;
-        box-shadow: none !important;
         background: rgba(0, 0, 0, 0.2) !important;
         color: #fff !important;
     }
