@@ -469,26 +469,6 @@ footer {
     color: #888;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-    }
-    
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-    
-    .btn {
-        display: block;
-        margin: 1rem 0;
-    }
-    
-    .experience-item {
-        padding-left: 1rem;
-    }
-}
-
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -590,4 +570,114 @@ html {
     color: #888;
     font-size: 1rem;
     font-weight: 500;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    #hero {
+        min-height: 100vh;
+        padding: 16px;
+        background: #000;
+    }
+
+    .hero-content {
+        margin: 0;
+        padding: 24px 16px;
+        background: #00B37E;
+        border-radius: 12px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .hero-content::before {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+        margin-bottom: 8px;
+        color: #fff;
+    }
+
+    .hero-content h2 {
+        font-size: 18px;
+        color: #00FFFF;
+        margin-bottom: 8px;
+        letter-spacing: 0;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 16px;
+        padding: 0;
+    }
+
+    .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+        background: rgba(0, 0, 0, 0.2) !important;
+        color: #fff !important;
+        border: none !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        min-width: 0;
+        width: auto;
+        margin: 0;
+        box-shadow: none !important;
+        transform: none !important;
+    }
+
+    .btn:hover, .btn:active {
+        transform: none !important;
+        box-shadow: none !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+    }
+
+    nav {
+        display: none;
+    }
+
+    section {
+        padding: 32px 16px;
+    }
+
+    /* Remove all animations and transitions on mobile */
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Ensure consistent button styles across all mobile devices */
+@media (max-width: 320px) {
+    .hero-content {
+        padding: 20px 12px;
+    }
+
+    .btn {
+        padding: 8px 10px;
+        font-size: 11px;
+    }
+}
+
+/* Force mobile styles for touch devices */
+@media (hover: none) {
+    .btn, .btn:hover, .btn:active {
+        transform: none !important;
+        box-shadow: none !important;
+        background: rgba(0, 0, 0, 0.2) !important;
+        color: #fff !important;
+    }
 }
