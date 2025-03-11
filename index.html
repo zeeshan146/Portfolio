@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <!-- Add Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Add AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
-            <h1>Zeeshan</h1>
-            <ul>
+            <h1 data-aos="fade-right">Zeeshan</h1>
+            <ul data-aos="fade-left">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -25,11 +27,11 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="zoom-in" data-aos-duration="1000">
             <h1>Zeeshan</h1>
-            <h2>SENIOR QA ENGINEER</h2>
-            <p>5+ Years of Experience in Software Testing & Quality Assurance</p>
-            <div class="hero-buttons">
+            <h2 data-aos="fade-up" data-aos-delay="200">SENIOR QA ENGINEER</h2>
+            <p data-aos="fade-up" data-aos-delay="400">5+ Years of Experience in Software Testing & Quality Assurance</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="600">
                 <a href="#contact" class="btn primary">Contact Me</a>
                 <a href="#projects" class="btn secondary">View Projects</a>
             </div>
@@ -38,23 +40,23 @@
 
     <!-- About Section -->
     <section id="about">
-        <h2>About Me</h2>
+        <h2 data-aos="fade-down">About Me</h2>
         <div class="about-content">
-            <div class="about-text">
+            <div class="about-text" data-aos="fade-right" data-aos-duration="1000">
                 <p>Senior QA Engineer with 5+ years of experience in software testing and quality assurance. Specialized in automated testing using Cypress, Selenium, and other modern testing frameworks. Strong background in API testing, performance testing, and CI/CD integration.</p>
             </div>
             <div class="key-highlights">
-                <div class="highlight">
+                <div class="highlight" data-aos="zoom-in" data-aos-delay="200">
                     <i class="fas fa-code"></i>
                     <h3>Test Automation</h3>
                     <p>Expertise in creating and maintaining automated test suites</p>
                 </div>
-                <div class="highlight">
+                <div class="highlight" data-aos="zoom-in" data-aos-delay="400">
                     <i class="fas fa-cogs"></i>
                     <h3>CI/CD Integration</h3>
                     <p>Experience with Jenkins, GitLab CI, and GitHub Actions</p>
                 </div>
-                <div class="highlight">
+                <div class="highlight" data-aos="zoom-in" data-aos-delay="600">
                     <i class="fas fa-bug"></i>
                     <h3>Bug Management</h3>
                     <p>Efficient bug tracking and resolution processes</p>
@@ -65,9 +67,9 @@
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2>Technical Skills</h2>
+        <h2 data-aos="fade-down">Technical Skills</h2>
         <div class="skills-content">
-            <div class="skill-category">
+            <div class="skill-category" data-aos="flip-left" data-aos-delay="100">
                 <h3>Automation Tools</h3>
                 <ul>
                     <li>Cypress</li>
@@ -76,7 +78,7 @@
                     <li>JUnit</li>
                 </ul>
             </div>
-            <div class="skill-category">
+            <div class="skill-category" data-aos="flip-left" data-aos-delay="300">
                 <h3>Programming Languages</h3>
                 <ul>
                     <li>JavaScript</li>
@@ -85,7 +87,7 @@
                     <li>SQL</li>
                 </ul>
             </div>
-            <div class="skill-category">
+            <div class="skill-category" data-aos="flip-left" data-aos-delay="500">
                 <h3>Testing Types</h3>
                 <ul>
                     <li>Functional Testing</li>
@@ -94,7 +96,7 @@
                     <li>Security Testing</li>
                 </ul>
             </div>
-            <div class="skill-category">
+            <div class="skill-category" data-aos="flip-left" data-aos-delay="700">
                 <h3>Tools & Frameworks</h3>
                 <ul>
                     <li>JIRA</li>
@@ -108,9 +110,9 @@
 
     <!-- Experience Section -->
     <section id="experience">
-        <h2>Professional Experience</h2>
+        <h2 data-aos="fade-down">Professional Experience</h2>
         <div class="experience-timeline">
-            <div class="experience-item">
+            <div class="experience-item" data-aos="fade-right">
                 <div class="experience-date">Aug 2024 - Present</div>
                 <div class="experience-content">
                     <h3>Senior QA Engineer</h3>
@@ -123,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="200">
                 <div class="experience-date">Jan 2023 - July 2024</div>
                 <div class="experience-content">
                     <h3>Senior Software Tester</h3>
@@ -137,7 +139,7 @@
                 </div>
             </div>
 
-            <div class="experience-item">
+            <div class="experience-item" data-aos="fade-right" data-aos-delay="400">
                 <div class="experience-date">Dec 2018 - Jan 2023</div>
                 <div class="experience-content">
                     <h3>Test Engineer</h3>
@@ -166,9 +168,9 @@
 
     <!-- Projects Section -->
     <section id="projects">
-        <h2>Key Projects</h2>
+        <h2 data-aos="fade-down">Key Projects</h2>
         <div class="projects-grid">
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in-up" data-aos-delay="100">
                 <h3>E-commerce Test Automation</h3>
                 <p>Implemented end-to-end test automation for an e-commerce platform using Cypress</p>
                 <div class="project-tech">
@@ -177,7 +179,7 @@
                     <span>CI/CD</span>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
                 <h3>API Testing Framework</h3>
                 <p>Developed a custom API testing framework using RestAssured and TestNG</p>
                 <div class="project-tech">
@@ -186,7 +188,7 @@
                     <span>TestNG</span>
                 </div>
             </div>
-            <div class="project-card">
+            <div class="project-card" data-aos="zoom-in-up" data-aos-delay="500">
                 <h3>Performance Testing</h3>
                 <p>Conducted performance testing for high-traffic web applications using JMeter</p>
                 <div class="project-tech">
@@ -200,26 +202,26 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2>Contact Me</h2>
+        <h2 data-aos="fade-down">Contact Me</h2>
         <div class="contact-content">
             <div class="contact-info">
-                <div class="contact-item">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-envelope"></i>
                     <p><a href="mailto:mirzazeeshan146@gmail.com">mirzazeeshan146@gmail.com</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
                     <i class="fab fa-linkedin"></i>
                     <p><a href="https://www.linkedin.com/in/md-zeeshan-reza-a3a4a0210/" target="_blank">LinkedIn Profile</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
                     <i class="fab fa-github"></i>
                     <p><a href="https://github.com/zeeshan146" target="_blank">github.com/zeeshan146</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
                     <i class="fas fa-phone"></i>
                     <p><a href="tel:+916204845542">+91 6204845542</a></p>
                 </div>
-                <div class="contact-item">
+                <div class="contact-item" data-aos="fade-up" data-aos-delay="500">
                     <i class="fas fa-map-marker-alt"></i>
                     <p>Bengaluru, India</p>
                 </div>
@@ -227,8 +229,19 @@
         </div>
     </section>
 
-    <footer>
+    <footer data-aos="fade-up">
         <p>&copy; 2024 Zeeshan - Senior QA Engineer Portfolio. All rights reserved.</p>
     </footer>
+
+    <!-- Add AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: true
+        });
+    </script>
 </body>
 </html>
