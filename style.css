@@ -552,3 +552,42 @@ section {
 html {
     scroll-behavior: smooth;
 }
+
+.education-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.education-item {
+    background: rgba(25, 25, 25, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 217, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 217, 255, 0.2);
+}
+
+.education-item h3 {
+    color: #00d9ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.education-item h4 {
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.education-year {
+    color: #888;
+    font-size: 1rem;
+    font-weight: 500;
+}
